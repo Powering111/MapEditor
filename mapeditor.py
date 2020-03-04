@@ -509,8 +509,10 @@ newEventmenu.add_command(label="이벤트 실행",command=newEV,accelerator="Ctr
 editmenu.add_cascade(label="새 이벤트",menu=newEventmenu)
 editmenu.add_command(label="선택된 이벤트 삭제",command=delnow,accelerator="Shift+D")
 toolmenu=tkinter.Menu(menubar,tearoff=0)
-toolmenu.add_command(label="맵 설정",command=mapsetting)
-toolmenu.add_command(label="도움말",command=ahelp)
+toolmenu.add_command(label="실행",command=runmap,accelerator="F5")
+toolmenu.add_command(label="무적으로 실행",command=runmapI,accelerator="F6")
+toolmenu.add_command(label="맵 설정",command=mapsetting,accelerator="F2")
+toolmenu.add_command(label="도움말",command=ahelp,accelerator="F1")
 # menu apply
 menubar.add_cascade(label="파일",menu=filemenu)
 menubar.add_cascade(label="편집",menu=editmenu)
@@ -528,8 +530,9 @@ window.bind("<Right>",nextTick)
 window.bind("<Left>",prevTick)
 window.bind("<Control-d>",delnow)
 window.bind("<Delete>",delnow)
+window.bind("<F2>",mapsetting)
 window.bind("<F5>",runmap)
-window.bind("<F3>",runmapI)
+window.bind("<F6>",runmapI)
 window.bind("<F1>",ahelp)
 # make objects
 #    font
